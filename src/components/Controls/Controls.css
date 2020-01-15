@@ -1,0 +1,27 @@
+.controls{
+    display: block;
+    width:350px;
+    height: 350px;
+    border: 1px solid black;
+}
+
+.place-section, .control-section, .report-section {
+    padding: 20px 0;
+}
+
+.btn {
+    padding: 10px;
+    margin: 10px;
+}
+
+.input-section{
+    margin: 5px;
+}
+.input-section label {
+    margin-right: 10px;
+}
+
+.input {
+    width: 50px;
+    height: 35px;
+}
