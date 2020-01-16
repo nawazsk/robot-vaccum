@@ -1,13 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './Grid.css';
 import Box from '../Box';
 
-const renderGrid = () => {
+const mapStateToProps = state => {
+    return ({
+        robotPosition: state.robotPosition
+    })
+}
+
+const renderGrid = (robotPosition) => {
     let parent = [];
 
     for(let i=0;i<5;i++) {
         for(let j=0;j<5;j++) {
-            let element = <Box x={i} y={j} key={i+''+j}/>
+            let element = <Box x={i} y={j} key={i+''+j} robotPosition={robotPosition}/>
             parent.push(element);
         }
     }
@@ -15,7 +22,9 @@ const renderGrid = () => {
     return parent;
 }
 
-const Grid = () => {
+const Grid = ({robotPosition}) => {
+    
+    
     return (
         <div className="grid-container">
             <div className="dir">
@@ -25,10 +34,10 @@ const Grid = () => {
                 <div className="dir-ver">
                     South
                 </div>
-                <div className="grid">
+                <div id="grid" className="grid">
 
                     {
-                        renderGrid()
+                        renderGrid(robotPosition)
                     }
 
                 </div>
@@ -45,4 +54,4 @@ const Grid = () => {
     )
 }
 
-export default Grid;
+export default connect(mapStateToProps)(Grid);
