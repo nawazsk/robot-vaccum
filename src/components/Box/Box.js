@@ -7,7 +7,7 @@ const Box = ({x, y, robotPosition}) => {
         <div className='box' x={x} y={y}>
         {
             robotPosition && (parseInt(robotPosition.x) === x && parseInt(robotPosition.y) === y) ?(
-                <Robot dir={robotPosition.f} />
+                <Robot dir={robotPosition.f}  />
             ): ''
         }
             

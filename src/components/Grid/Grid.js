@@ -4,8 +4,9 @@ import './Grid.css';
 import Box from '../Box';
 
 const mapStateToProps = state => {
+    console.log(state);
     return ({
-        robotPosition: state.robotPosition
+        robotPosition: state.robotPosition,
     })
 }
 
@@ -14,7 +15,12 @@ const renderGrid = (robotPosition) => {
 
     for(let i=0;i<5;i++) {
         for(let j=0;j<5;j++) {
-            let element = <Box x={i} y={j} key={i+''+j} robotPosition={robotPosition}/>
+            let element = <Box 
+                        x={i} 
+                        y={j} 
+                        key={i+''+j} 
+                        robotPosition={robotPosition} 
+                        />
             parent.push(element);
         }
     }
